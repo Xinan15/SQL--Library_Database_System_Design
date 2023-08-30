@@ -1,0 +1,15 @@
+How the model is derived
+
+The main entities are Member and Item. 
+We have two kinds of member: Staff and Student. They share same attributes excepet for loan credit.
+
+Then we add attributes to member, such as name, member ID, their email address.
+Each member has an account. We use account to manage their fine and account status (whether they have been suspended).
+
+We add attributes to Item, such as Item name, Item ID, their location, total stock, type, and borrowing rules.
+
+There are two relationships between Member and Item.
+
+The first one is loan. A loan has a unique Loan-record-number as primary key, and has return date,lending date, overdue status, and fine (if any).
+
+The second one is reservation. It also has a unique reservation record number as primary key. The reservation time is used to determine who books the item first. The number of refusals is also recorded since the reservation record would be deleted if the member refuse to take their reserved item for more than 3 times.
